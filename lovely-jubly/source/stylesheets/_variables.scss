@@ -1,0 +1,172 @@
+$primary-color-1: #202428;
+
+$secondary-color-1: #F3F3F3;
+
+
+$danger-red: #D0021B;
+
+// Used to place the sticky footer appropriately
+$footer-height: 70px;
+
+%clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+        // Fixes Opera/contenteditable bug:
+        // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+        line-height: 0;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+%vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+%preserve {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+@mixin transition($transitions) {
+       -moz-transition: $transitions;
+         -o-transition: $transitions;
+        -ms-transition: $transitions;
+    -webkit-transition: $transitions;
+          transition: $transitions;
+}
+
+@mixin transform($transforms) {
+       -moz-transform: $transforms;
+         -o-transform: $transforms;
+        -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+/* ==================== Responsive ==================== */
+
+$phone-min: 0px;
+$phone-max: 480px;
+
+$tabletsmall-min: 481px;
+$tabletsmall-max: 767px;
+
+$tabletlarge-min: 768px;
+$tabletlarge-max: 979px;
+
+$desktopsmall-min: 980px;
+$desktopsmall-max: 1199px;
+
+$desktoplarge-min: 1200px;
+
+/* ======== Mobile ======== */
+
+@mixin phone-only {
+    @media only screen and (min-width : $phone-min) and (max-width : $phone-max) {
+        @content;
+    }
+}
+
+@mixin phone-to-tabletsmall {
+    @media only screen and (min-width : $phone-min) and (max-width : $tabletsmall-max) {
+        @content;
+    }
+}
+
+@mixin phone-to-tabletlarge {
+    @media only screen and (min-width : $phone-min) and (max-width : $tabletlarge-max) {
+        @content;
+    }
+}
+
+@mixin phone-to-desktopsmall {
+    @media only screen and (min-width : $phone-min) and (max-width : $desktopsmall-max) {
+        @content;
+    }
+}
+
+@mixin phone-and-up {
+    @media only screen and (min-width : $phone-min) {
+        @content;
+    }
+}
+
+/* ======== Tablet Small ======== */
+
+@mixin tabletsmall-only {
+    @media only screen and (min-width : $tabletsmall-min) and (max-width : $tabletsmall-max) {
+        @content;
+    }
+}
+
+@mixin tabletsmall-to-tabletlarge {
+    @media only screen and (min-width : $tabletsmall-min) and (max-width : $tabletlarge-max) {
+        @content;
+    }
+}
+
+@mixin tabletsmall-to-desktopsmall {
+    @media only screen and (min-width : $tabletsmall-min) and (max-width : $desktopsmall-max) {
+        @content;
+    }
+}
+
+@mixin tabletsmall-and-up {
+    @media only screen and (min-width : $tabletsmall-min) {
+        @content;
+    }
+}
+
+
+/* ======== Tablet Large ======== */
+
+@mixin tabletlarge-only {
+    @media only screen and (min-width : $tabletlarge-min) and (max-width : $tabletlarge-max) {
+        @content;
+    }
+}
+
+@mixin tabletlarge-to-desktopsmall {
+    @media only screen and (min-width : $tabletlarge-min) and (max-width : $desktopsmall-max) {
+        @content;
+    }
+}
+
+@mixin tabletlarge-and-up {
+    @media only screen and (min-width : $tabletlarge-min) {
+        @content;
+    }
+}
+
+
+/* ======== Desktop Small ======== */
+
+@mixin desktopsmall-only {
+    @media only screen and (min-width : $desktopsmall-min) and (max-width : $desktopsmall-max) {
+        @content;
+    }
+}
+
+@mixin desktopsmall-and-up {
+    @media only screen and (min-width : $desktopsmall-min) {
+        @content;
+    }
+}
+
+/* ======== Desktop Large ======== */
+
+@mixin desktoplarge-only {
+    @media only screen and (min-width : $desktoplarge-min) {
+        @content;
+    }
+}
